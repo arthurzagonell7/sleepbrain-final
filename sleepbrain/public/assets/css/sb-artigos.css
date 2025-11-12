@@ -1,0 +1,22 @@
+/* Artigos */
+.artigos-header{ display:flex; align-items:center; justify-content:space-between; margin:18px 0 }
+.artigos-grid{ grid-template-columns: repeat(3, 1fr) }
+.artigo-card{ position:relative; overflow:hidden }
+.artigo-card .delete{ position:absolute; right:10px; top:10px; background:rgba(0,0,0,.3); border:1px solid var(--sb-border); color:#fff; border-radius:10px; padding:8px; cursor:pointer }
+.artigo-card a{ display:flex; gap:12px; padding:12px }
+.artigo-card .icon{ width:56px; height:56px; display:grid; place-items:center; border-radius:12px; background:linear-gradient(120deg,var(--sb-accent), var(--sb-primary-2)) }
+.artigo-card h3{ margin:0 }
+.artigo-card .meta{ color:var(--sb-muted); font-size:.92rem }
+@media (max-width:1000px){ .artigos-grid{ grid-template-columns: repeat(2,1fr) } }
+@media (max-width:680px){ .artigos-grid{ grid-template-columns: 1fr } }
+/* Modal "Novo artigo" */
+#dlg-artigo {
+  color: #fff;           /* cor padrão do texto dentro do modal */
+}
+
+/* Se quiser garantir também em labels, parágrafos e título: */
+#dlg-artigo h3,
+#dlg-artigo label,
+#dlg-artigo p {
+  color: #fff;
+}

@@ -1,0 +1,27 @@
+<div id="chat-widget-container" class="hidden">
+  <button id="chat-flag" class="sbc-flag" aria-label="Abrir chat">
+    <i class="fas fa-comments"></i>
+    <span id="chat-notification-flag" class="sbc-flag-badge" style="display:none">0</span>
+  </button>
+
+  <section id="chat-modal" class="sbc-modal" aria-hidden="true">
+    <header class="sbc-header">
+      <button id="chat-back-button" class="sbc-back" title="Voltar"><i class="fas fa-chevron-left"></i></button>
+      <strong id="chat-partner-name">Chat</strong>
+      <button id="chat-close-button" class="sbc-close" title="Fechar"><i class="fas fa-times"></i></button>
+    </header>
+    <div class="sbc-body">
+      <aside id="chat-contact-list-view" class="sbc-contacts">
+        <div class="sbc-search"><input id="chat-search" placeholder="Buscar pessoas..."/></div>
+        <ul id="chat-contact-list" class="sbc-list"><li class="sbc-empty">Carregando…</li></ul>
+      </aside>
+      <section id="chat-box-view" class="sbc-chat hidden">
+        <div id="chat-messages" class="sbc-messages"><p class="sbc-loading">Selecione um contato para começar a conversar.</p></div>
+        <form id="chat-send-form" class="sbc-form">
+          <input id="chat-message-input" placeholder="Digite sua mensagem..." autocomplete="off"/>
+          <button class="sb-btn" type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </section>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,119 @@
+/* ====== sb-chat.css (Corrigido para Layout Sequencial e Altura) ====== */
+:root{
+  --sbc-bg: rgba(10,13,23,.96);
+  --sbc-border: rgba(255,255,255,.08);
+  --sbc-muted: #9aa3b2;
+  --sbc-radius: 14px;
+}
+
+.hidden{display:none !important;}
+
+.sbc-flag{
+  position: fixed; left: 24px; bottom: 24px; z-index: 1600;
+  width: 54px; height: 54px; border-radius: 999px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: #fff; border: none; cursor: pointer; box-shadow: 0 8px 28px rgba(0,0,0,.35);
+}
+.sbc-flag i{font-size: 20px;}
+.sbc-flag-badge{
+  position:absolute; top:-6px; right:-6px; width:20px; height:20px; border-radius:999px;
+  background:#8b5cf6; color:#fff; font-size:12px; display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 6px 18px rgba(139,92,246,.45);
+}
+
+.sbc-modal{
+  position: fixed; left: 24px; bottom: 92px; z-index: 1600;
+  width: 370px; 
+  height: 520px; /* ⚠️ CORREÇÃO: Aumentado para 520px, conforme solicitado */
+  background: var(--sbc-bg);
+  border:1px solid var(--sbc-border); border-radius: var(--sbc-radius);
+  display: none; /* Inicia escondido */
+  overflow: hidden;
+  /* Garante o layout interno de Header e Body */
+  flex-direction: column;
+}
+.sbc-modal.open{ display: flex; } /* Visível quando .open está presente */
+
+.sbc-header{
+  height: 52px; display:flex; align-items:center; justify-content:space-between;
+  padding: 0 10px; border-bottom:1px solid var(--sbc-border);
+  flex-shrink: 0; 
+}
+.sbc-back,.sbc-close{
+  background:transparent; border:none; color:#fff; width:36px; height:36px; border-radius:10px; cursor:pointer;
+}
+
+/* Garante o layout sequencial de Contatos E Chat (um sobre o outro) */
+.sbc-body{ 
+    position: relative; 
+    height: calc(100% - 52px); 
+    width: 100%;
+}
+
+.sbc-contacts{ 
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: var(--sbc-bg); 
+    display:grid; 
+    grid-template-rows: auto 1fr; 
+    border-right: none; 
+}
+.sbc-search{ padding:10px; }
+.sbc-search input{
+  width:100%; padding:10px 12px; border-radius:10px; background:rgba(255,255,255,.06); border:1px solid var(--sbc-border); color:#fff;
+}
+.sbc-list{ list-style:none; padding:0; margin:0; overflow:auto; }
+.sbc-list .sbc-empty{ color: var(--sbc-muted); padding: 12px; }
+.contact-item{ display:flex; align-items:center; gap:10px; padding:10px 12px; cursor:pointer; }
+.contact-item:hover{ background: rgba(255,255,255,.04); }
+.contact-avatar{ width:26px; height:26px; border-radius:50%; background:linear-gradient(120deg, #22d3ee,#6366f1); display:grid; place-items:center; font-weight:800; color:#fff }
+.contact-name{ color:#fff }
+.contact-unread-count{ margin-left:auto; background:#8b5cf6; color:#fff; font-size:11px; border-radius:999px; padding:2px 6px; }
+
+/* Garante que o Chat ocupa 100% do body e usa o grid para fixar o form */
+.sbc-chat{ 
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; 
+    height: 100%; 
+    display:grid; 
+    grid-template-rows: 1fr auto; 
+    overflow: hidden; 
+    background: var(--sbc-bg); 
+}
+
+.sbc-messages{ padding: 12px; overflow:auto; }
+.sbc-form{ 
+    display:flex; 
+    gap:8px; 
+    padding:10px; 
+    border-top:1px solid var(--sbc-border);
+    flex-shrink: 0; 
+}
+.sbc-form input{
+  flex:1; padding:10px 12px; border-radius:10px; background:rgba(255,255,255,.06); border:1px solid var(--sbc-border); color:#fff;
+}
+/* Estilo do botão de envio */
+.sbc-form button {
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    display: grid;
+    place-items: center;
+}
+
+
+.chat-message{ max-width: 84%; padding:10px 12px; border-radius: 12px; margin: 6px 0; word-wrap: break-word; }
+.message-in{ background: rgba(255,255,255,.06); color:#fff; }
+.message-out{ background: linear-gradient(135deg, #6366f1, #22d3ee); color:#fff; margin-left:auto; }
+.sender-name{ display:block; font-size:12px; color: var(--sbc-muted); margin-bottom:4px; }
+
+.sbc-loading,.sbc-error{ color: var(--sbc-muted); font-size:.95rem; padding:12px; }

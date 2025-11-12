@@ -1,0 +1,14 @@
+/* Login / Registro */
+.auth-wrap{ min-height: calc(100vh - 76px); display:grid; place-items:center; }
+.auth-card{ width:min(520px, 94%); padding:24px; }
+.auth-card h1{ margin:0 0 8px 0 }
+.auth-card p{ color:var(--sb-muted); margin:0 0 16px 0 }
+
+.form-row{ display:grid; gap:6px; margin:10px 0 }
+.input{
+  background:rgba(255,255,255,.05); border:1px solid var(--sb-border);
+  color:#fff; border-radius:10px; padding:12px 14px; outline:none; width:100%;
+}
+.input:focus{ border-color:var(--sb-primary) }
+.auth-actions{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:8px }
+.link{ color: var(--sb-accent) }
