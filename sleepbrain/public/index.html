@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SleepBrain • Início</title>
+  <link rel="stylesheet" href="/assets/css/sb-global.css"/>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  
+  <main class="container">
+    <section class="hero"> ... </section>
+    <h2>Destaques</h2>
+    <div id="sb-products-grid" class="cards-grid"></div>
+  </main>
+
+  
+  <script src="/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await carregarHeader('header-placeholder', getUser());
+      
+    });
+  </script>
+</body>
+</html>

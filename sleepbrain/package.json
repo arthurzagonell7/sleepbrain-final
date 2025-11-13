@@ -1,0 +1,25 @@
+{
+  "name": "sleepbrain",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SleepBrain backend (Express + Socket.IO + MySQL2) e frontend estático em /public",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --quiet server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.10.1",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>SleepBrain — Meu Perfil</title>
+  <link rel="stylesheet" href="/assets/css/sb-global.css">
+  <link rel="stylesheet" href="/assets/css/sb-header.css">
+  <link rel="stylesheet" href="/assets/css/sb-perfil.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="container profile-container">
+    <section class="profile-card sb-card">
+      <header class="profile-card__header">
+        <div class="profile-avatar" id="avatar-initial">U</div>
+        <div>
+          <h2 id="display-name" style="margin:0">Usuário</h2>
+          <div class="profile-badges">
+            <span id="badge-role">comum</span>
+            <span id="chip-status">ativo</span>
+          </div>
+        </div>
+      </header>
+
+      <form id="formPerfil">
+        <div class="grid profile-grid">
+          <div class="sb-card card-section">
+            <h3>Dados da conta</h3>
+            <div class="form-row">
+              <label>Nome</label>
+              <input class="input" id="perfilNome" required>
+            </div>
+            <div class="form-row">
+              <label>E-mail</label>
+              <input class="input" id="perfilEmail" type="email" required>
+              <small id="email-hint" class="form-msg"></small>
+            </div>
+          </div>
+
+          <div class="sb-card card-section">
+            <h3>Alterar senha <span style="color:var(--sb-muted)">(opcional)</span></h3>
+            <div class="form-row">
+              <label>Senha atual</label>
+              <div class="pass-field">
+                <input class="input" type="password" id="perfilSenhaAtual">
+                <button class="toggle" type="button" data-target="perfilSenhaAtual"><i class="far fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="form-row">
+              <label>Nova senha</label>
+              <div class="pass-field">
+                <input class="input" type="password" id="perfilNovaSenha" minlength="6">
+                <button class="toggle" type="button" data-target="perfilNovaSenha"><i class="far fa-eye"></i></button>
+              </div>
+              <small class="form-msg">Para trocar, informe a <b>senha atual</b> e a <b>nova senha</b>.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-actions">
+          <div>
+            <button type="button" class="sb-btn btn-danger" id="btnExcluirConta"><i class="fas fa-user-slash"></i> Excluir minha conta</button>
+          </div>
+          <p id="perfilMsg" class="form-msg"></p>
+          <div style="display:flex;gap:10px">
+            <button type="button" class="sb-btn sb-btn--secondary" id="btnCancelar">Cancelar</button>
+            <button type="submit" class="sb-btn" id="btnSalvar"><i class="fas fa-save"></i> Salvar</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+  <script>
+    (function(){
+      
+      carregarHeader('header-placeholder', getUser());
+      initPerfilPage(); 
+    })();
+  </script>
+</body>
+</html>

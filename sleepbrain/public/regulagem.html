@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>SleepBrain — Regulagem de sono</title>
+  <link rel="stylesheet" href="/assets/css/sb-global.css">
+  <link rel="stylesheet" href="/assets/css/sb-header.css">
+  <link rel="stylesheet" href="/assets/css/sb-regulagem.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="container sb-section">
+    <section class="sb-card rg-card">
+      <header class="rg-header">
+        <h1>Regulagem de sono</h1>
+        <p class="muted">Informe sua idade e o número médio de horas de sono por dia. Diremos se está bom, pode melhorar, ou está ruim — e o que fazer.</p>
+      </header>
+
+      <form id="rg-form" class="rg-form">
+        <div class="form-row">
+          <label>Idade</label>
+          <input class="input" id="rg-idade" type="number" min="1" max="120" required>
+        </div>
+        <div class="form-row">
+          <label>Horas de sono/dia (média)</label>
+          <input class="input" id="rg-horas" type="number" step="0.1" min="0" max="24" required>
+        </div>
+        <div class="rg-actions">
+          <button type="button" class="sb-btn sb-btn--secondary" id="rg-limpar">Limpar</button>
+          <button class="sb-btn" type="submit">Avaliar</button>
+        </div>
+      </form>
+
+      <div id="rg-resultado" class="rg-resultado sb-card" style="display:none"></div>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+  <script>
+    
+    carregarHeader('header-placeholder', getUser());
+    initRegulagemPage(); 
+  </script>
+</body>
+</html>

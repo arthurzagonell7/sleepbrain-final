@@ -1,0 +1,103 @@
+
+
+.admin-container {
+    padding-top: 20px;
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.admin-header h1 {
+    margin: 0;
+}
+
+.admin-section {
+    padding: 20px;
+}
+
+.admin-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.user-list-wrap {
+    overflow-x: auto; 
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.user-table th, .user-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--sb-border);
+}
+
+.user-table thead th {
+    background-color: var(--sb-surface-2);
+    color: var(--sb-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.user-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.user-table td.user-info {
+    font-weight: 500;
+}
+
+.user-table .user-role {
+    text-transform: capitalize;
+}
+
+.user-status {
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+.status-ativo { background-color: #16a34a30; color: #16a34a; } /* Verde */
+.status-banido { background-color: #ef444430; color: #ef4444; } /* Vermelho */
+
+.action-btn {
+    background: transparent;
+    border: 1px solid var(--sb-border);
+    color: var(--sb-muted);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.85rem;
+}
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+.action-btn.ban {
+    color: #ef4444;
+}
+.action-btn.ban:hover {
+    background: #ef444430;
+}
+.action-btn.unban {
+    color: #16a34a;
+}
+.action-btn.unban:hover {
+    background: #16a34a30;
+}
+
+.loading-row {
+    text-align: center !important;
+    color: var(--sb-muted);
+}

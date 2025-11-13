@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>SleepBrain — Administração</title>
+
+  <link rel="stylesheet" href="/assets/css/sb-global.css">
+  <link rel="stylesheet" href="/assets/css/sb-header.css">
+  <link rel="stylesheet" href="/assets/css/sb-admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    dialog.sb-modal { border:none; padding:0; border-radius:12px; overflow:hidden; max-width:520px; width:95%;
+      box-shadow:0 10px 30px rgba(0,0,0,.2); background:var(--sb-surface,#111827); color:inherit; }
+    .sb-modal__header { padding:16px 20px; border-bottom:1px solid rgba(255,255,255,.08); }
+    .sb-modal__body   { padding:16px 20px; }
+    .sb-modal__footer { padding:14px 20px; display:flex; gap:10px; justify-content:flex-end; border-top:1px solid rgba(255,255,255,.08); }
+    .form-grid { display:grid; gap:12px; }
+    .form-grid label { display:flex; flex-direction:column; gap:6px; font-weight:600; }
+    .form-grid input, .form-grid select { padding:10px 12px; border:1px solid rgba(255,255,255,.15); border-radius:8px;
+      background:transparent; color:inherit; }
+    .muted-hint { font-size:12px; color:#9ca3af; }
+    .you-badge { font-size:12px; background:#1f2937; color:#60a5fa; padding:2px 6px; border-radius:8px; margin-left:6px; }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="container admin-container">
+    <header class="admin-header" style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <div>
+        <h1>Gerenciamento de Usuários</h1>
+        <p id="admin-user-message" class="muted" style="margin:0">Aguardando inicialização...</p>
+      </div>
+      <div>
+        <button id="btn-novo-usuario" class="sb-btn">
+          <i class="fas fa-user-plus"></i> Novo usuário
+        </button>
+      </div>
+    </header>
+
+    <section class="admin-section sb-card">
+      <div class="user-list-wrap">
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>NOME / E-MAIL</th>
+              <th>FUNÇÃO</th>
+              <th>STATUS</th>
+              <th>AÇÕES</th>
+            </tr>
+          </thead>
+          <tbody id="user-list">
+            <tr class="loading-row">
+              <td colspan="4">Carregando usuários...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  
+  <dialog id="dlg-user" class="sb-modal">
+    <form id="formCreateUser" method="dialog">
+      <div class="sb-modal__header">
+        <h3 style="margin:0">Criar novo usuário</h3>
+        <p id="modal-user-msg" class="muted" style="margin:6px 0 0"></p>
+      </div>
+      <div class="sb-modal__body">
+        <div class="form-grid">
+          <label>
+            Nome
+            <input type="text" name="nome" id="cu-nome" placeholder="Ex.: Maria Silva" required>
+          </label>
+          <label>
+            E-mail
+            <input type="email" name="email" id="cu-email" placeholder="email@dominio.com" required>
+            <span id="cu-email-hint" class="muted-hint"></span>
+          </label>
+          <label>
+            Senha
+            <input type="password" name="senha" id="cu-senha" placeholder="••••••••" minlength="6" required>
+          </label>
+          <label>
+            Função
+            <select name="role" id="cu-role" required>
+              <option value="comum" selected>Comum</option>
+              <option value="admin">Admin</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="sb-modal__footer">
+        <button type="button" class="sb-btn sb-btn--secondary" id="cu-cancelar">Cancelar</button>
+        <button type="submit" class="sb-btn">Criar usuário</button>
+      </div>
+    </form>
+  </dialog>
+
+  
+  <script src="/script.js?v=20251111"></script>
+  <script src="/admin.js?v=20251111"></script>
+</body>
+</html>

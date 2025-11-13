@@ -1,0 +1,68 @@
+<header class="sb-header">
+  <div class="sb-header__left">
+    <a href="/index.html" class="sb-logo">
+      <span class="sb-logo__mark">☾</span>
+      <span class="sb-logo__text">SleepBrain</span>
+    </a>
+
+    <nav class="sb-nav">
+      <a href="/index.html" class="sb-nav__link">Início</a>
+      <a href="/artigos.html" class="sb-nav__link">Artigos</a>
+      <a href="/regulagem.html" class="sb-nav__link">Regulagem de sono</a>
+      <a href="/admin.html" class="sb-nav__link sb-nav__link--admin" id="sb-link-admin" style="display:none">Admin</a>
+    </nav>
+  </div>
+
+  <div class="sb-header__right">
+    <div class="sb-search">
+      <input id="sb-search-input" type="search" placeholder="Pesquisar…">
+      <button id="sb-search-btn" aria-label="Pesquisar"><i class="fas fa-search"></i></button>
+    </div>
+
+    <button class="sb-icon-btn" id="sb-open-cart" aria-label="Abrir lista de desejos">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="sb-badge" id="sb-cart-count">0</span>
+    </button>
+
+    <div class="sb-user-menu">
+      <button class="sb-icon-btn sb-user-btn" id="sb-user-btn" aria-label="Menu do usuário" aria-expanded="false">
+        <div class="sb-user-avatar" id="sb-user-initial">U</div>
+      </button>
+
+      <ul class="sb-user-dropdown sb-card" id="sb-user-dropdown">
+        </ul>
+    </div>
+  </div>
+</header>
+
+<aside class="sb-cart" id="sb-cart" aria-hidden="true">
+  <div class="sb-cart__header">
+    <div class="title">
+      <i class="fas fa-list-alt"></i>
+      <strong>Lista de desejos</strong>
+    </div>
+    <button class="sb-icon-btn" id="sb-close-cart" aria-label="Fechar lista"><i class="fas fa-times"></i></button>
+  </div>
+
+  <div class="sb-cart__body" id="sb-cart-items">
+    </div>
+
+  <div class="sb-cart__footer">
+    <div class="sb-cart__summary">
+      <span>Itens:</span>
+      <strong id="sb-cart-total">0</strong>
+    </div>
+    <div style="display:flex; gap:8px">
+      <button class="sb-btn sb-btn--secondary" id="sb-cart-clear" type="button">Limpar</button>
+      <button class="sb-btn" id="sb-cart-buyall" type="button">Comprar</button>
+    </div>
+  </div>
+</aside>
+
+<div id="toast-notification" class="sb-toast" aria-live="polite" aria-atomic="true">
+  <i id="toast-icon" class="fas fa-check-circle" aria-hidden="true"></i>
+  <span id="toast-message">Mensagem</span>
+</div>
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
